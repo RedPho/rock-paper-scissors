@@ -1,3 +1,5 @@
+let computerSelection;
+let playerSelection;
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random()*3);
   if (randomNumber == 0) {
@@ -11,24 +13,22 @@ function getComputerChoice() {
   }
 }
 
-let playerSelection;
-let computerSelection;
 
-function playRaund(playerSelection, computerSelection) {
+
+function playRaund() {
 
   computerSelection = getComputerChoice();
-  playerSelection = prompt("rock, paper or scissors?").toLowerCase();
 
   if (computerSelection == "rock") {
 
     if (playerSelection == "rock") {
-      return "Tie";
+      return "Rakibin de tas secti. Berabere.";
     }
     else if (playerSelection == "paper") {
-      return "You won! Paper beats Rock"
+      return "Rakibin tas secti. Kazandin! Kagit tasi yener"
     }
     else if (playerSelection == "scissors") {
-      return "You lose! Rock beats Scissors"
+      return "Rakibin tas secti. Kaybettin :( Tas makasi yener."
     }
   }
 
@@ -36,11 +36,11 @@ function playRaund(playerSelection, computerSelection) {
 
     switch (playerSelection) {
       case "rock":
-        return "You lose! Paper beats Rock";
+        return "Rakibin kagit secti. Kaybettin :( Kagit tasi yener";
       case "paper":
-        return "Tie";
+        return "Rakibin de kagit secti. Berabere";
       case "scissors":
-        return "You won! Scissors beats Paper";
+        return "Rakibin kagit secti. Kazandin! makas kagidi yener";
     }
   }
 
@@ -48,18 +48,32 @@ function playRaund(playerSelection, computerSelection) {
 
     switch (playerSelection) {
       case "rock":
-        return "You won! Rock beats Scissors";
+        return "Rakibin makas secti. Kazandin! tas makasi yener";
       case "paper":
-        return "You lose! Scissors beats Paper";
+        return "Rakibin makas secti. Kaybettin :( makas tasi yener";
       case "scissors":
-        return "Tie";
+        return "Rakibin de makas secti. Berabere";
     }
   }
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let result = playRaund(playerSelection, computerSelection);
-    console.log(result);
-  }
+
+function getPlayerChoice(e) {
+  playerSelection = e.target.id;
 }
+
+function alertResult() {
+  let result = playRaund();
+  let restults = document.querySelector("#result");
+  let para = document.createElement("p")
+  para.innerText = result;
+  restults.appendChild(para);
+}
+
+
+
+let buttons = document.querySelectorAll(".choice");
+buttons.forEach(button => button.addEventListener("click", getPlayerChoice));
+buttons.forEach(button => button.addEventListener("click", alertResult));
+
+
