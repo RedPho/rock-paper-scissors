@@ -9,14 +9,26 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>5 Olan Kazanir</h1>
   <div id="buttons">
     <img class="choice" id="rock" src="media/rock.png" alt="rock">
     <img class="choice" id="paper" src="media/paper.png" alt="paper">
     <img class="choice" id="scissors" src="media/scissors.png" alt="scissors">
   </div>
-  <div>
+  <div class="flex-column">
     <h3>Sonuc</h3>
     <p id="result"></p>
+    <h1 id="win-lose"></h1>
+    <div id="flexrow">
+      <div class="scores">
+        <h5>Oyuncu</h5>
+          <div id="pscore"></div>
+      </div>
+      <div class="scores">
+        <h5>Bilgisayar</h5>
+        <div id="cscore"></div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
