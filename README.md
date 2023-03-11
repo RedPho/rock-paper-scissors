@@ -1,4 +1,4 @@
-# tas-kagit-makas
+# rock-paper-scissors
 rock-paper-scissors game
 
 Live: https://redpho.github.io/tas-kagit-makas/
