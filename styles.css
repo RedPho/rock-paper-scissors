@@ -11,27 +11,34 @@ body {
 #buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
   align-items: center;
 }
 
 img { 
   width: 100px;
   height: 100px;
+  border: 3px solid black;
+  border-radius: 25px;
+}
+img:hover {
+  cursor: pointer;
+  border: solid white 3px;
+  border-radius: 25px;
 }
 
 .scores {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: large;
 }
 
 #flexrow {
   display: flex;
   flex-direction: row;
-  gap: 20px;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .flex-column {
